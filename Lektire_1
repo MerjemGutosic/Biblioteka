@@ -1,0 +1,28 @@
+<?php
+$serverName="localhost";
+$userName="root";
+$password="";
+$dbName="biblioteka";
+$conn=new mysqli($serverName, $userName, $password, $dbName);
+
+$sql = "SELECT* FROM knjiga WHERE Tip='lektira 1'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) 
+  {
+?>
+  <table>
+  <tr> <td>
+<?php
+    echo "Ime knjige: " . $row["Naziv_knjige"] ?> </td>
+   <td> <?php echo "Autor: " . $row["Autor"] ?> </td> 
+   <td> <?php echo "Datum: " . $row["Datum_izdavanja"] ?> </td>
+   <td> <?php echo "Vrsta djela: " . $row["Vrsta"] ?> </td>
+   <td> <?php echo "Broj dostupnih primjeraka: " . $row["Br. primjera"] ?> </td></tr>
+   </table> <?php 
+  }
+} else {
+  echo "0 results";
+}
