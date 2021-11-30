@@ -1,0 +1,71 @@
+<?php
+   include_once'spajanje.php';
+echo "<p><b>Lektire za prvi razred:</b></p>";
+$sql = "SELECT* FROM knjiga WHERE Tip='lektira 1'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "Ime knjige: " . $row["Naziv_knjige"]. ", autor: " . $row["Autor"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+
+echo "<p><b>Lektire za drugi razred:</b></p>";
+$sql = "SELECT* FROM knjiga WHERE Tip='lektira 2'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "Ime knjige: " . $row["Naziv_knjige"]. ", autor: " . $row["Autor"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+
+
+echo "<p><b>Lektire za treci razred:</b></p>";
+$sql = "SELECT* FROM knjiga WHERE Tip='lektira 3'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "Ime knjige: " . $row["Naziv_knjige"]. ", autor: " . $row["Autor"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+
+
+echo "<p><b>Lektire za cetrvti razred:</b></p>";
+$sql = "SELECT* FROM knjiga WHERE Tip='lektira 4'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "Ime knjige: " . $row["Naziv_knjige"]. ", autor: " . $row["Autor"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+
+echo "Ostale knjige:";
+$sql = "SELECT* FROM knjiga WHERE Tip='ostalo'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "Ime knjige: " . $row["Naziv_knjige"]. ", autor: " . $row["Autor"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+?>
+</body>
+</html>
