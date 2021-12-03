@@ -1,3 +1,30 @@
+<html>
+<head>
+<style type="text/css">
+table {
+margin: 8px;
+width: 1000px;
+border-collapse: collapse;
+}
+
+th {
+font-family: Arial, Helvetica, sans-serif;
+font-size: .7em;
+background: #666;
+color: #FFF;
+padding: 2px 6px;
+height: 70px
+ border-bottom: 1px solid #ddd;
+}
+
+td {
+font-family: Arial, Helvetica, sans-serif;
+font-size: .7em;
+text-align:center;
+ border-bottom: 1px solid #ddd;
+}
+</style>
+</head>
 <?php
 $serverName="localhost";
 $userName="root";
@@ -14,13 +41,12 @@ if ($result->num_rows > 0) {
   {
 ?>
   <table>
-  <tr> <td>
-<?php
-    echo "Ime knjige: " . $row["Naziv_knjige"] ?> </td>
-   <td> <?php echo "Autor: " . $row["Autor"] ?> </td> 
-   <td> <?php echo "Datum: " . $row["Datum_izdavanja"] ?> </td>
-   <td> <?php echo "Vrsta djela: " . $row["Vrsta"] ?> </td>
-   <td> <?php echo "Broj dostupnih primjeraka: " . $row["Br. primjera"] ?> </td></tr>
+  <tr> 
+   <td width="500" height="70" ><?php echo "Ime knjige: " . $row["Naziv_knjige"] ?> </td>
+   <td width="500" height="70" > <?php echo "Autor: " . $row["Autor"] ?> </td> 
+   <td width="500" height="70" > <?php echo "Datum: " . $row["Datum_izdavanja"] ?> </td>
+   <td width="500" height="70" > <?php echo "Vrsta djela: " . $row["Vrsta"] ?> </td>
+   <td width="500" height="70" > <?php echo "Broj dostupnih primjeraka: " . $row["Br. primjera"] ?> </td></tr>
    </table> <?php 
   }
 } else {
